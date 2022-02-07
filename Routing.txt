@@ -1,0 +1,13 @@
+Handling Frontend Routing
+The next roadblock to tackle for setting up the frontend is routing.
+If you’re planning to have the frontend do its own routing,
+you’ll need to make sure that the backend routes don’t clash with the frontend ones.
+You’ll also need to make sure that,
+for all routes that the backend doesn’t recognize,
+it falls back to rendering the layout page that bootstraps the frontend, and not a 404 page.
+If you fail to do the latter,
+nested frontend routes won’t work if you navigate to them directly,
+or refresh the page after navigating from the root URL.
+
+One way to ensure the routes don’t clash is to add a prefix like /app/ for web routes.
+API routes already have the /api/ prefix set up by default, and shouldn’t pose any issues.
